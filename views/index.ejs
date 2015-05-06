@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type ="text/javascript">
+		$(document).ready(function (){ 
+			var socket = io.connect();
+			socket.on('connect', function (data) {
+			console.log('BROWSER::WE ARE USING SOCKETS!');
+			socket.on("update_javascript", function(data){
+				console.log("update_javascript");
+			})
+			socket.on("update_swift", function(data){
+				console.log('update_swift');
+			})
+		});
+	});
+	</script>
+</head>
+<body>
+	<h1>JavaScript</h1>
+	<p>0</p>
+	<h1>Swift</h1>
+	<p>0</p>
+</body>
+</html>
